@@ -13,7 +13,7 @@ setup: .venv
 
 # Lint
 
-black:
+black: .venv
 	poetry run black --check --diff $(PROJECT)
 
 flake: .venv
@@ -27,7 +27,7 @@ lint: black flake pylint
 
 # Test
 
-.pytest:
+pytest: .venv
 	poetry run pytest $(TESTS)
 
-test: .venv .pytest
+test: pytest
