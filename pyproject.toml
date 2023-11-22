@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "astute-vision-dl"
+version = "0.1.0"
+description = ""
+authors = ["Daniil-Solo <daniil.solo1723@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+flake8 = "^6.1.0"
+pylint = "^3.0.2"
+pytest = "^7.4.3"
+httpx = "^0.25.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
