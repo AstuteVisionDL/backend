@@ -1,5 +1,5 @@
 """Endpoints"""
-from fastapi import APIRouter, Request
+from fastapi import APIRouter
 from fastapi.websockets import WebSocket, WebSocketDisconnect
 from loguru import logger
 

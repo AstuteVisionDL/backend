@@ -1,6 +1,6 @@
 """Application"""
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI
 from loguru import logger
 
 from src.api.router import router
