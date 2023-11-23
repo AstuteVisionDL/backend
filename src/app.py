@@ -1,17 +1,19 @@
 """Application"""
 from contextlib import asynccontextmanager
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from loguru import logger
 
 from src.api.router import router
+from src.models.dependencies import get_actual_sign_detector
 
 
 @asynccontextmanager
-async def start(application: FastAPI):  # pylint: disable=unused-argument
+async def start(application: FastAPI):
     """
     Executes start actions
     """
-    logger.info("Start application")
+    application.state.sign_detector = get_actual_sign_detector()
+    logger.info("Model loading was successful")
     yield
 
 
