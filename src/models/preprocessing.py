@@ -11,6 +11,6 @@ def from_text_image_url_to_bytes(image_url: str) -> bytes:
     image_url has format "data:image/jpeg;base64,/9j/4AAQSkZJ..."
     """
     data = image_url.encode()
-    data = data[IMAGE_FORMAT_LEN + BASE64_FORMAT_LEN:]
+    data = data[IMAGE_FORMAT_LEN + BASE64_FORMAT_LEN :]
     image = base64.decodebytes(data)
     return image

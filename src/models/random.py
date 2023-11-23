@@ -1,16 +1,18 @@
 """Random model for testing frontend"""
+import random
 from typing import List
 from random import randint, sample
 from src.models.base import BaseSignDetector
 from src.constants import SIGN_ID_LIST
 
 
-# pylint: disable=too-few-public-methods
 class RandomSignDetector(BaseSignDetector):
     """Class for random detection"""
 
-    @staticmethod
-    def recognize_signs(image: bytes) -> List[int]:
+    def __int__(self, random_seed=0):
+        random.seed(random_seed)
+
+    def recognize_signs(self, image: bytes) -> List[int]:
         """
         Generates randomly id list of signs on image
         """

@@ -1,16 +1,15 @@
 """Base class for detection"""
-from abc import ABC, abstractmethod
 from typing import List
+from abc import ABC, abstractmethod
 
 
-class BaseSignDetector(ABC):  # pylint: disable=too-few-public-methods
+class BaseSignDetector(ABC):
     """
     Base class for detection
     """
 
-    @staticmethod
     @abstractmethod
-    def recognize_signs(image: bytes) -> List[int]:
+    def recognize_signs(self, image: bytes) -> List[int]:
         """
         Detects signs on image
         """
