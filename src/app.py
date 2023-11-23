@@ -7,7 +7,7 @@ from src.api.router import router
 
 
 @asynccontextmanager
-def start(application: FastAPI):
+def start(application: FastAPI):  # pylint: disable=unused-argument
     """
     Executes start actions
     """
