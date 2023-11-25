@@ -2,6 +2,7 @@
 from enum import Enum
 from pydantic import Field
 from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
 
 
 class ModeEnum(str, Enum):
@@ -18,8 +19,9 @@ class ApplicationSettings(BaseSettings):
     Settings for application
     """
 
-    mode: ModeEnum = Field(default="test", alias="MODE")
+    mode: ModeEnum = Field(default=ModeEnum.TEST, alias="MODE")
     port: int = Field(default=5000, alias="PORT")
 
 
+load_dotenv()
 settings = ApplicationSettings()
