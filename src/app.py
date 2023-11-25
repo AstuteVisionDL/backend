@@ -5,10 +5,11 @@ from loguru import logger
 
 from src.api.router import router
 from src.models.dependencies import get_actual_sign_detector
+from src.config import settings, ModeEnum
 
 
 @asynccontextmanager
-async def start(application: FastAPI):
+async def lifespan(application: FastAPI):
     """
     Executes start actions
     """
@@ -18,7 +19,7 @@ async def start(application: FastAPI):
 
 
 app = FastAPI(
-    lifespan=start,
+    lifespan=lifespan if settings.mode == ModeEnum.PRODUCTION else None,
     title="Sign Detector Backend",
     version="0.0.1",
     docs_url="/docs",
