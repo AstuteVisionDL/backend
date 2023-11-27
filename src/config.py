@@ -20,6 +20,7 @@ class ApplicationSettings(BaseSettings):
     """
 
     mode: ModeEnum = Field(default=ModeEnum.TEST, alias="MODE")
+    prob_threshold: float = Field(default=0.5, alias="YOLO_PROB_THRESHOLD")
 
 
 load_dotenv()

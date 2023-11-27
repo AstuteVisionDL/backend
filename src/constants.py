@@ -32,4 +32,3 @@ FRONTEND_PATH = os.path.join(PROJECT_PATH, "frontend")
 TEMPLATES_PATH = os.path.join(FRONTEND_PATH, "templates")
 STATIC_PATH = os.path.join(FRONTEND_PATH, "static")
 YOLO_PATH = os.path.join(PROJECT_PATH, "models", "yolo.pt")
-YOLO_THRESHOLD = 0.5

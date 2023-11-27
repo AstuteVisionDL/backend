@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+  api:
+    build: .
+    command: poetry run uvicorn src.app:app --host 0.0.0.0 --port 8000
+    environment:
+      - MODE=prod
+      - YOLO_PROB_THRESHOLD=0.5
+    ports:
+      - 8000:8000
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge

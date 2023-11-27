@@ -4,7 +4,8 @@ from typing import List
 from PIL import Image
 from ultralytics import YOLO
 from src.models.base import BaseSignDetector
-from src.constants import YOLO_PATH, YOLO_THRESHOLD
+from src.config import settings
+from src.constants import YOLO_PATH
 
 
 class YOLOSignDetector(BaseSignDetector):
@@ -22,7 +23,7 @@ class YOLOSignDetector(BaseSignDetector):
         found_signs = self.model.predict(yolo_image)[0]
         for box in found_signs.boxes:
             prob = round(box.conf[0].item(), 2)
-            if prob > YOLO_THRESHOLD:
+            if prob > settings.prob_threshold:
                 class_id = box.cls[0].item()
                 sign_id = found_signs.names[class_id]
                 sign_id_list.append(sign_id)
