@@ -13,6 +13,7 @@ websockets = "^12.0"
 loguru = "^0.7.2"
 pydantic-settings = "^2.1.0"
 jinja2 = "^3.1.2"
+ultralytics = "^8.0.218"
 
 
 [tool.poetry.group.dev.dependencies]
