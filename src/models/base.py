@@ -9,7 +9,7 @@ class BaseSignDetector(ABC):
     """
 
     @abstractmethod
-    def recognize_signs(self, image: bytes) -> List[int]:
+    def recognize_signs(self, image: bytes) -> List[str]:
         """
         Detects signs on image
         """
