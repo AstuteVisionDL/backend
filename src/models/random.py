@@ -12,7 +12,7 @@ class RandomSignDetector(BaseSignDetector):
     def __int__(self, random_seed=0):
         random.seed(random_seed)
 
-    def recognize_signs(self, image: bytes) -> List[int]:
+    def recognize_signs(self, image: bytes) -> List[str]:
         """
         Generates randomly id list of signs on image
         """
